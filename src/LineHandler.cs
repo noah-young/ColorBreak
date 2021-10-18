@@ -18,16 +18,16 @@ public class LineHandler : MonoBehaviour {
     bool resetted = true;
     float lineSpeed;
 
-	void Start () {
+    void Start () {
         moveRight = (Random.value < 0.5f);
         lineSpeed = Random.Range(0.012f, 0.018f);
-	}
-	
-	void Update () {
+    }
+    
+    void Update () {
         handleLines ();
         findLastLine ();
         resetLine ();
-	}
+    }
 
     GameObject findLastLine () {
         GameObject last = lines [0];

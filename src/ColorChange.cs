@@ -11,10 +11,10 @@ public class ColorChange : MonoBehaviour {
     // Use this for initialization
     void Start () {
         resetColor ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+    
+    // Update is called once per frame
+    void Update () {
         //Debug.Log (randNewColor);
         if (transform.position.y > 9) {
             resetColor ();
@@ -23,7 +23,7 @@ public class ColorChange : MonoBehaviour {
             StartCoroutine (colorAnim ());
             playAgain = false;
         }
-	}
+    }
 
     void resetColor () {
         randNewColor = GameHandler.currPlayerColor;

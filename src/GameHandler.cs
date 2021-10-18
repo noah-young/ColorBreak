@@ -11,12 +11,12 @@ public class GameHandler : MonoBehaviour {
     public static int currPlayerColor = -1; // 0 - Red, 1 - Green, 2 - Blue (Starts at -1 for no color)
     int spawnCount, maxLines;
     public GameObject linePrefab, changerPrefab, lineHolder, lineSpawn, coinPrefab;
-	[HideInInspector]
+    [HideInInspector]
     public static bool gameStarted, gameEnded;
     public static float gameSpeed = 1.0f;
     float t, spawnTime, coinT, coinSpawnTime;
-	bool objectsStarted;
-	public ParticleSystem backgroundLines;
+    bool objectsStarted;
+    public ParticleSystem backgroundLines;
 
     void Awake() {
         Application.targetFrameRate = 60;
@@ -56,19 +56,19 @@ public class GameHandler : MonoBehaviour {
             }
         */
 
-		if (gameStarted) {
+        if (gameStarted) {
             moveObjs();
             if (gameSpeed < 2f)
                 gameSpeed += 0.00015f;
             if (objectsStarted == false)
-			    startObjs ();
-		}
-	}
+                startObjs ();
+        }
+    }
 
-	void startObjs () {
-		backgroundLines.Play ();
-		objectsStarted = true;
-	}
+    void startObjs () {
+        backgroundLines.Play ();
+        objectsStarted = true;
+    }
 
     void moveObjs () {
         foreach (GameObject g in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[]) {

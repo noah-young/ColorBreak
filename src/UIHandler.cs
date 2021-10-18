@@ -11,9 +11,9 @@ using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour {
     
-	public Text scoreText, line;
+    public Text scoreText, line;
     public Image sceneReset, sceneReset2, sceneReset3, trophy, coins;
-	public Button startButton, resetButton;
+    public Button startButton, resetButton;
     bool cover, resetMoved, scoreResetted;
 
     void Start() {
