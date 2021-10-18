@@ -64,58 +64,59 @@ public class Player : MonoBehaviour {
 
         void clickHandler () {
         if (Input.GetMouseButton (0) && moveRight) {
-        if (player.transform.rotation.y < 0.2f) {
-        player.transform.Rotate (Vector2.up * Time.deltaTime * 45);
-        shadow.transform.localPosition = 
-        Vector2.Lerp (shadow.transform.localPosition,
-                    new Vector2 (-0.03f, shadow.transform.localPosition.y), Time.deltaTime * 5);
-        }
-        if (speedModifier < 3.5f * GameHandler.gameSpeed) {
-        speedModifier += 0.35f * GameHandler.gameSpeed;
-        }
-        smoke.Emit (1);
+            if (player.transform.rotation.y < 0.2f) {
+                player.transform.Rotate (Vector2.up * Time.deltaTime * 45);
+                shadow.transform.localPosition = 
+                Vector2.Lerp (shadow.transform.localPosition,
+                            new Vector2 (-0.03f, shadow.transform.localPosition.y), Time.deltaTime * 5);
+            }
+            if (speedModifier < 3.5f * GameHandler.gameSpeed) {
+                speedModifier += 0.35f * GameHandler.gameSpeed;
+            }
+            smoke.Emit (1);
         } else if (Input.GetMouseButton (0) && moveRight == false) {
-        if (player.transform.rotation.y > -0.2f) {
-        player.transform.Rotate (Vector2.down * Time.deltaTime * 45);
-        shadow.transform.localPosition =
-            Vector2.Lerp (shadow.transform.localPosition, 
-                        new Vector2 (0.03f, shadow.transform.localPosition.y), Time.deltaTime * 5);
-        }
-        if (speedModifier > -3.5f * GameHandler.gameSpeed) {
-        speedModifier -= 0.35f * GameHandler.gameSpeed;
-        }
-        smoke.Emit (1);
+            if (player.transform.rotation.y > -0.2f) {
+            player.transform.Rotate (Vector2.down * Time.deltaTime * 45);
+            shadow.transform.localPosition =
+                Vector2.Lerp (shadow.transform.localPosition, 
+                            new Vector2 (0.03f, shadow.transform.localPosition.y), Time.deltaTime * 5);
+            }
+            if (speedModifier > -3.5f * GameHandler.gameSpeed) {
+            speedModifier -= 0.35f * GameHandler.gameSpeed;
+            }
+            smoke.Emit (1);
         } else {
-        /*if (player.transform.rotation.y > 0) {
-        player.transform.Rotate (Vector2.down * Time.deltaTime * 45);
-        } else if (player.transform.rotation.y < 0) {
-        player.transform.Rotate (Vector2.up * Time.deltaTime * 45);
-        }*/
+            /*if (player.transform.rotation.y > 0) {
+            player.transform.Rotate (Vector2.down * Time.deltaTime * 45);
+            } else if (player.transform.rotation.y < 0) {
+            player.transform.Rotate (Vector2.up * Time.deltaTime * 45);
+            }*/
 
-        if (moveRight == false) {
-        if (player.transform.rotation.y < 0.1f) {
-        player.transform.Rotate (Vector2.up * Time.deltaTime * 35);
-        shadow.transform.localPosition = 
-        Vector2.Lerp (shadow.transform.localPosition, 
-                        new Vector2 (-0.02f, shadow.transform.localPosition.y), Time.deltaTime * 5);
-        }
-        if (speedModifier < 3.0f * GameHandler.gameSpeed) {
-        speedModifier += 0.3f * GameHandler.gameSpeed;
-        }
-        } else if (moveRight) {
-        if (player.transform.rotation.y > -0.1f) {
-        player.transform.Rotate (Vector2.down * Time.deltaTime * 35);
-        shadow.transform.localPosition = 
-        Vector2.Lerp (shadow.transform.localPosition, 
-                        new Vector2 (0.02f, shadow.transform.localPosition.y), Time.deltaTime * 5);
-        }
-        if (speedModifier > -3.0f * GameHandler.gameSpeed) {
-        speedModifier -= 0.3f * GameHandler.gameSpeed;
-        }
-        }
+            if (moveRight == false) {
+                if (player.transform.rotation.y < 0.1f) {
+                    player.transform.Rotate (Vector2.up * Time.deltaTime * 35);
+                    shadow.transform.localPosition = 
+                    Vector2.Lerp (shadow.transform.localPosition, 
+                                    new Vector2 (-0.02f, shadow.transform.localPosition.y), Time.deltaTime * 5);
+                }
+                
+                if (speedModifier < 3.0f * GameHandler.gameSpeed) {
+                    speedModifier += 0.3f * GameHandler.gameSpeed;
+                }
+            } else if (moveRight) {
+                if (player.transform.rotation.y > -0.1f) {
+                    player.transform.Rotate (Vector2.down * Time.deltaTime * 35);
+                    shadow.transform.localPosition = 
+                    Vector2.Lerp (shadow.transform.localPosition, 
+                                    new Vector2 (0.02f, shadow.transform.localPosition.y), Time.deltaTime * 5);
+                }
+                if (speedModifier > -3.0f * GameHandler.gameSpeed) {
+                    speedModifier -= 0.3f * GameHandler.gameSpeed;
+                }
+            }
 
-        //shadow.transform.localPosition = 
-        //  Vector2.Lerp (shadow.transform.localPosition, new Vector2 (0f, shadow.transform.localPosition.y), Time.deltaTime * 5);
+            //shadow.transform.localPosition = 
+            //  Vector2.Lerp (shadow.transform.localPosition, new Vector2 (0f, shadow.transform.localPosition.y), Time.deltaTime * 5);
         }
 
         if (Input.GetMouseButtonUp (0)) {
